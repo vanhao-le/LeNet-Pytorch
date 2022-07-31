@@ -32,3 +32,7 @@ We have 4 python files here:
 
 2.5. Reset gradient zero_gradient(), perform backward() propagation and update the parameters.
 
+The results after 5 epochs training with batch_size 16.
+
+![Alt text](output/train.png?raw=true "The training result.")
+
