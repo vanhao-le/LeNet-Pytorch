@@ -8,7 +8,7 @@ import torch.nn.functional as F
 class LeNet(nn.Module):
     def __init__(self, input_dim, num_classes):
         super(LeNet, self).__init__()
-
+        # Tensor (batch_size, channels, height, width)
         # initialize the first block CONV=>RELU=>POOL
         self.conv1 = nn.Conv2d(in_channels=input_dim, out_channels= 20, kernel_size=5)
         self.relu1 = nn.ReLU()
@@ -23,7 +23,7 @@ class LeNet(nn.Module):
         # initialize the softmax for the classifier
         self.fc2 = nn.Linear(in_features=500, out_features=num_classes)
         # softmax can be applied later when we predict the input
-        self.logSoftmax = F.softmax(dim=1)
+        # self.logSoftmax = nn.LogSoftmax(dim= 1)
 
     def forward(self, t):
         # Pass the first block
@@ -42,8 +42,8 @@ class LeNet(nn.Module):
         t = self.fc1(t)
         t = self.relu3(t)
         # pass the output to the classifier
-        t = self.fc2(t)
-        out = self.logSoftmax(t)
+        out = self.fc2(t)
+        # out = self.logSoftmax(t)
         # return our predictions
         return out
 
