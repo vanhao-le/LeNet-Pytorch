@@ -2,16 +2,8 @@
 How to train a CNN network with Pytorch
 
 1. Project structure
-.
-|__ output
-|   |__ model.pth
-|   |__ plot.png
-|__ model
-|   |__ LNet.py
-|__ chip  
-|   |__ config.py
-|__ train.py
-|__ inference.py
+
+![project_structure](output/project.png)
 
 We have 4 python files here:
 - /model/LeNet.py: This is our model architecture based on the LeNet model.
